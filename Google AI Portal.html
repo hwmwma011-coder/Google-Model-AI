@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/vip/OneDrive/Desktop/google_clone.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google AI Portal</title>
+<link href="./Google AI Portal_files/css2" rel="stylesheet">
+<link href="./Google AI Portal_files/lucide.css" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(270deg, #0f0f0f, #1b1b1b, #2a0d25, #3d2b47, #2b1f1f);
+    background-size: 600% 600%;
+    animation: gradientShift 18s ease infinite;
+    color: #f0f0f0;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .side-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+  }
+
+  .side-panel h2 {
+    font-size: 22px;
+    color: #d6c57b;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+  }
+
+  .ai-item {
+    margin: 12px 0;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.3s;
+  }
+
+  .ai-item i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #d6c57b;
+  }
+
+  .ai-item:hover {
+    color: #ff6666;
+    transform: scale(1.05);
+  }
+
+  .games {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(90deg, #3d3d3d, #c9a74d);
+    border: none;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .games:hover {
+    background: linear-gradient(90deg, #2a2a2a, #e0b84d);
+    box-shadow: 0 0 15px rgba(255,215,0,0.3);
+  }
+
+  .search-container {
+    text-align: center;
+    margin-top: 20vh;
+  }
+
+  .logo {
+    font-size: 65px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #d6c57b, #ffffff, #ad5f5f, #b296c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorFlow 10s linear infinite;
+  }
+
+  @keyframes colorFlow {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+  }
+
+  input[type="text"] {
+    width: 55%;
+    padding: 18px;
+    border-radius: 40px;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    background: rgba(255,255,255,0.08);
+    color: #f5f5f5;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    transition: 0.4s;
+  }
+
+  input[type="text"]:focus {
+    box-shadow: 0 0 20px rgba(214,197,123,0.4);
+  }
+</style>
+</head>
+<body>
+
+<div class="side-panel">
+  <h2>AI Panel</h2>
+  <div class="ai-item" onclick="window.open(&#39;https://chat.openai.com/&#39;, &#39;_blank&#39;)"><i class="lucide-message-square"></i>ChatGPT</div>
+  <div class="ai-item" onclick="window.open(&#39;https://www.anthropic.com/claude&#39;, &#39;_blank&#39;)"><i class="lucide-brain"></i>Claude</div>
+  <div class="ai-item" onclick="window.open(&#39;https://www.openai.com/grok&#39;, &#39;_blank&#39;)"><i class="lucide-zap"></i>Grok</div>
+</div>
+
+<button class="games" onclick="window.open(&#39;https://hazem-walid1.itch.io/fight-zombie&#39;, &#39;_blank&#39;)">Games</button>
+
+<div class="search-container">
+  <div class="logo">Google</div>
+  <form id="searchForm" target="_blank">
+    <input type="text" id="searchInput" placeholder="Search the Future...">
+  </form>
+</div>
+
+<script>
+  // البحث في جوجل
+  const form = document.getElementById('searchForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('searchInput').value;
+    if(query) {
+      window.open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank');
+    }
+  });
+
+  // اضغط Enter لتفعيل البحث
+  document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if(e.key === 'Enter') {
+      e.preventDefault();
+      form.dispatchEvent(new Event('submit'));
+    }
+  });
+</script>
+
+
+
+</body></html>
